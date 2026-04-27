@@ -1,0 +1,13 @@
+Option Explicit
+
+Sub RefreshAllPivots()
+    Dim ws As Worksheet
+    Dim pt As PivotTable
+    For Each ws In ThisWorkbook.Worksheets
+        For Each pt In ws.PivotTables
+            pt.RefreshTable
+        Next pt
+    Next ws
+    MsgBox "Data & Dashboard refreshed successfully.", vbInformation, "Refresh Complete"
+End Sub
+
